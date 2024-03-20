@@ -34,7 +34,7 @@ router.post('/addEvents', upload.single('image'), fetchuser, async (req, res) =>
   const userId = req.user.id;
   const userData = await user.findById(userId);
   const userDepartment = userData.commiteeName;
-  console.log(req.body);
+  // console.log(req.body);
   try {
     if (!file) {
       return res.status(401).json({ success: false, msg: "Enter valid file" });

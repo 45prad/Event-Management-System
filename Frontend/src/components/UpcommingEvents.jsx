@@ -24,7 +24,7 @@ const UpcomingEvents = () => {
 
     const getUser = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/auth/getuser', {
+            const response = await fetch('https://event-management-system-ext9.onrender.com/api/auth/getuser', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const UpcomingEvents = () => {
 
     const fetchEvents = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/events");
+            const response = await fetch("https://event-management-system-ext9.onrender.com/api/events");
             if (response.ok) {
                 const data = await response.json();
                 setEvents(data);
@@ -58,7 +58,7 @@ const UpcomingEvents = () => {
 
     const handleRSVP = async (eventId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/events/${eventId}/rsvp`, {
+            const response = await fetch(`https://event-management-system-ext9.onrender.com/api/events/${eventId}/rsvp`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const UpcomingEvents = () => {
             comments
         };
         try {
-            const response = await fetch(`http://localhost:5000/api/events/${selectedEventId}/feedback`, {
+            const response = await fetch(`https://event-management-system-ext9.onrender.com/api/events/${selectedEventId}/feedback`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

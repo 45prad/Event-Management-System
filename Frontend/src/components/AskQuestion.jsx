@@ -16,7 +16,7 @@ const AskQuestion = ({ eventId }) => {
 
     const fetchQuestions = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/events/${eventId}/questions`);
+            const response = await fetch(`https://event-management-system-ext9.onrender.com/api/events/${eventId}/questions`);
             if (response.ok) {
                 const data = await response.json();
                 setQuestions(data);
@@ -30,7 +30,7 @@ const AskQuestion = ({ eventId }) => {
 
     const handleAskQuestion = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/events/${eventId}/questions`, {
+            const response = await fetch(`https://event-management-system-ext9.onrender.com/api/events/${eventId}/questions`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const AskQuestion = ({ eventId }) => {
 
     const handleReply = async (questionId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/events/${eventId}/questions/${questionId}/replies`, {
+            const response = await fetch(`https://event-management-system-ext9.onrender.com/api/events/${eventId}/questions/${questionId}/replies`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

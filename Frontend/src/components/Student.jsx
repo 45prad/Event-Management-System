@@ -32,7 +32,7 @@ function Student() {
 
   const getUser = async () => {
     // API call
-    const response = await fetch('http://localhost:5000/api/auth/getuser', {
+    const response = await fetch('https://event-management-system-ext9.onrender.com/api/auth/getuser', {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,7 @@ function Student() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/data', {
+      const response = await axios.get('https://event-management-system-ext9.onrender.com/api/data', {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function Student() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/data/${id}`);
+      await axios.delete(`https://event-management-system-ext9.onrender.com/api/data/${id}`);
       fetchData();
     } catch (error) {
       console.error('Error deleting data:', error);
@@ -109,9 +109,9 @@ function Student() {
       formDataToSend.append('status', formData.status);
 
       if (editMode) {
-        await axios.put(`http://localhost:5000/api/data/${editId}`, formDataToSend);
+        await axios.put(`https://event-management-system-ext9.onrender.com/api/data/${editId}`, formDataToSend);
       } else {
-        await axios.post('http://localhost:5000/api/data', formDataToSend);
+        await axios.post('https://event-management-system-ext9.onrender.com/api/data', formDataToSend);
       }
       fetchData();
       setShowModal(false);
@@ -198,7 +198,7 @@ function Student() {
                 <td className="border px-4 py-2">{extractDateComponents(item.eventDate)}</td>
                 <td className="border px-4 py-2">{item.duration}</td>
                 <td className="border px-4 py-2">
-                  <a href={`http://localhost:5000/uploads/${item.poaPdf}`} target="_blank" rel="noopener noreferrer" className='text-blue-800'>View PDF</a>
+                  <a href={`https://event-management-system-ext9.onrender.com/uploads/${item.poaPdf}`} target="_blank" rel="noopener noreferrer" className='text-blue-800'>View PDF</a>
                 </td>
                 <td className="border px-4 py-2" style={{ color: getStatusColor(item.status) }}>{item.status}</td>
                 <td className="border px-4 py-2">

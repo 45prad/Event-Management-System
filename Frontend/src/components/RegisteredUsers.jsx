@@ -79,7 +79,7 @@ const EventsAndRegisteredUsers = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/events/registerations", {
+      const response = await fetch("https://event-management-system-ext9.onrender.com/api/events/registerations", {
         headers: {
           "FrAngel-auth-token": localStorage.getItem("FrAngel-auth-token")
         }

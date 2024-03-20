@@ -96,6 +96,21 @@ const FormComponent = () => {
     doc.save('permission_letter.pdf');
   };
 
+  const getUser = async () => {
+    // API call
+    const response = await fetch('https://event-management-system-ext9.onrender.com/api/auth/getuser', {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "FrAngel-auth-token": localStorage.getItem('FrAngel-auth-token')
+      },
+    });
+    const json = await response.json();
+    setUser(json)
+    console.log(user);
+
+  }
+
   return (
     <div  className="flex justify-center items-center h-screen bg-gray-100" >
       <div className="bg-white p-8 rounded-lg shadow-lg" >

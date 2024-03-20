@@ -43,7 +43,7 @@ const EventForm = ({ showModal, setShowModal, fetchData }) => {
         formData.append('image', eventData.image);
     
         try {
-            const response = await fetch('http://localhost:5000/api/events/addEvents', {
+            const response = await fetch('https://event-management-system-ext9.onrender.com/api/events/addEvents', {
                 method: 'POST',
                 body: formData,
                 headers: {

@@ -10,7 +10,7 @@ function AllEventsData() {
 
   const fetchAllData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/data/',{
+      const response = await axios.get('https://event-management-system-ext9.onrender.com/api/data/',{
         method: "GET",
         headers: {
             "Content-Type": "application/json",

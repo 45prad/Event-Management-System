@@ -13,7 +13,7 @@ function PrincipalPage() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/data', {
+      const response = await fetch('https://event-management-system-ext9.onrender.com/api/data', {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -33,7 +33,7 @@ function PrincipalPage() {
 
   const handleStatusUpdate = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/data/status/${id}`, {
+      const response = await fetch(`https://event-management-system-ext9.onrender.com/api/data/status/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ function PrincipalPage() {
               <td className="border px-4 py-2">{item.eventDate}</td>
               <td className="border px-4 py-2">{item.duration}</td>
               <td className="border px-4 py-2">
-                <a href={`http://localhost:5000/uploads/${item.poaPdf}`} target="_blank" rel="noopener noreferrer">View PDF</a>
+                <a href={`https://event-management-system-ext9.onrender.com/uploads/${item.poaPdf}`} target="_blank" rel="noopener noreferrer">View PDF</a>
               </td>
               {/* <td className="border px-4 py-2">{item.status}</td> */}
               <td className="border px-4 py-2">

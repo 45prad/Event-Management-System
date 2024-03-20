@@ -32,7 +32,7 @@ export default function Signin(props){
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        const response = await fetch('https://event-management-system-ext9.onrender.com/api/auth/login', {
             method: "POST",  
             headers: {
               "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export default function Signin(props){
 
     const getUser = async () => {
         // API call
-        const response = await fetch('http://localhost:5000/api/auth/getuser', {
+        const response = await fetch('https://event-management-system-ext9.onrender.com/api/auth/getuser', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

@@ -13,7 +13,7 @@ export default function RoomBooking() {
 
   useEffect(() => {
     // Fetch room data from backend API
-    fetch('http://localhost:5000/api/room')
+    fetch('https://event-management-system-ext9.onrender.com/api/room')
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch rooms');
@@ -55,7 +55,7 @@ export default function RoomBooking() {
       return;
     }
     // Make API call to book the room
-    fetch(`http://localhost:5000/api/room/${selectedRoom._id}/book`, {
+    fetch(`https://event-management-system-ext9.onrender.com/api/room/${selectedRoom._id}/book`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
